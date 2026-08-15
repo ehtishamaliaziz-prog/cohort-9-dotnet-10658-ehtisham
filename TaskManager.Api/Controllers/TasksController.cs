@@ -120,6 +120,12 @@ namespace TaskManager.Api.Controllers
             task.Priority = dto.Priority;
             task.Category = dto.Category;
             task.DueDate = dto.DueDate;
+
+            if (IsAdmin && dto.UserId.HasValue)
+            {
+                task.UserId = dto.UserId.Value;
+            }
+
             task.UpdatedAt = DateTime.UtcNow;
 
             await _context.SaveChangesAsync();

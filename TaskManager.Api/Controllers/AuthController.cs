@@ -79,5 +79,16 @@ namespace TaskManager.Api.Controllers
                 Role = user.Role.ToString()
             });
         }
+
+        [HttpGet("users")]
+        [Microsoft.AspNetCore.Authorization.Authorize(Roles = "Admin")]
+        public async Task<ActionResult> GetUsers()
+        {
+            var users = await _context.Users
+                .Select(u => new { u.Id, u.FullName, u.Email })
+                .ToListAsync();
+
+            return Ok(users);
+        }
     }
 }

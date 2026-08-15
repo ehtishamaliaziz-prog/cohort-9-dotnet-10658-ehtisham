@@ -1,0 +1,16 @@
+﻿# .NET build artifacts
+bin/
+obj/
+
+# Serilog log files
+TaskManager.Api/Logs/
+
+# Node / React
+taskmanager-client/node_modules/
+taskmanager-client/dist/
+
+# Editor/OS files
+.vs/
+.vscode/
+*.user
+.DS_Store
