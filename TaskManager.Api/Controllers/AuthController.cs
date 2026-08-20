@@ -41,7 +41,15 @@ namespace TaskManager.Api.Controllers
             };
 
             _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                return BadRequest("An account with this email already exists.");
+            }
 
             _logger.LogInformation("New user registered: UserId {UserId}", user.Id);
 
