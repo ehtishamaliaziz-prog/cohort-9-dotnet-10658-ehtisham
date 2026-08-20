@@ -100,7 +100,20 @@ namespace TaskManager.Api.Controllers
 
             _logger.LogInformation("Task {TaskId} created by user {UserId}", task.Id, CurrentUserId);
 
-            return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
+            var readDto = new TaskReadDto
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Description = task.Description,
+                Status = task.Status,
+                Priority = task.Priority,
+                Category = task.Category,
+                DueDate = task.DueDate,
+                CreatedAt = task.CreatedAt,
+                UserId = task.UserId
+            };
+
+            return CreatedAtAction(nameof(GetTask), new { id = task.Id }, readDto);
         }
 
         [HttpPut("{id}")]
@@ -121,10 +134,16 @@ namespace TaskManager.Api.Controllers
             task.Category = dto.Category;
             task.DueDate = dto.DueDate;
 
-            if (IsAdmin && dto.UserId.HasValue)
-            {
-                task.UserId = dto.UserId.Value;
-            }
+           if (IsAdmin && dto.UserId.HasValue)
+{
+    var targetUserExists = await _context.Users.AnyAsync(u => u.Id == dto.UserId.Value);
+    if (!targetUserExists)
+    {
+        return BadRequest($"User {dto.UserId.Value} does not exist.");
+    }
+
+    task.UserId = dto.UserId.Value;
+}
 
             task.UpdatedAt = DateTime.UtcNow;
 

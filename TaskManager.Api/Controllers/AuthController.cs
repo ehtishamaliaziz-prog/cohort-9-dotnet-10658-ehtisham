@@ -28,7 +28,7 @@ namespace TaskManager.Api.Controllers
             var emailExists = await _context.Users.AnyAsync(u => u.Email == dto.Email);
             if (emailExists)
             {
-                _logger.LogWarning("Registration attempt with existing email {Email}", dto.Email);
+                _logger.LogWarning("Registration attempt with an email that already exists");
                 return BadRequest("An account with this email already exists.");
             }
 
@@ -43,7 +43,7 @@ namespace TaskManager.Api.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation("New user registered: {Email}", user.Email);
+            _logger.LogInformation("New user registered: UserId {UserId}", user.Id);
 
             var token = _tokenService.CreateToken(user);
 
@@ -63,11 +63,11 @@ namespace TaskManager.Api.Controllers
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
             {
-                _logger.LogWarning("Failed login attempt for {Email}", dto.Email);
+                _logger.LogWarning("Failed login attempt");
                 return Unauthorized("Invalid email or password.");
             }
 
-            _logger.LogInformation("User logged in: {Email}", user.Email);
+            _logger.LogInformation("User logged in: UserId {UserId}", user.Id);
 
             var token = _tokenService.CreateToken(user);
 

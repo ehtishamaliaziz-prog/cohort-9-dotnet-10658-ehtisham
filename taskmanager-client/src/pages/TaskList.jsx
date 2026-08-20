@@ -27,17 +27,18 @@ function TaskList() {
     }
   };
 
-  const fetchUsers = async () => {
+   const fetchUsers = async () => {
     try {
       const response = await api.get("/auth/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(response.data);
     } catch (err) {
-      // Non-admins get 403 here - expected, skip silently.
+      if (err.response?.status !== 403) {
+        setError("Could not load the user list. Reassignment is unavailable.");
+      }
     }
   };
-
   useEffect(() => {
     if (!token) {
       navigate("/");

@@ -83,8 +83,9 @@ function NewTask() {
 
         <form className="task-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Title</label>
+            <label htmlFor="task-title">Title</label>
             <input
+              id="task-title"
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -92,40 +93,43 @@ function NewTask() {
             />
           </div>
           <div className="form-group">
-            <label>Description</label>
+            <label htmlFor="task-description">Description</label>
             <input
+              id="task-description"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
           <div className="form-group">
-            <label>Status</label>
-            <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <label htmlFor="task-status">Status</label>
+            <select id="task-status" value={status} onChange={(e) => setStatus(e.target.value)}>
               <option value="Pending">Pending</option>
               <option value="InProgress">In Progress</option>
               <option value="Completed">Completed</option>
             </select>
           </div>
           <div className="form-group">
-            <label>Priority</label>
-            <select value={priority} onChange={(e) => setPriority(e.target.value)}>
+            <label htmlFor="task-priority">Priority</label>
+            <select id="task-priority" value={priority} onChange={(e) => setPriority(e.target.value)}>
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
           </div>
           <div className="form-group">
-            <label>Category</label>
+            <label htmlFor="task-category">Category</label>
             <input
+              id="task-category"
               type="text"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             />
           </div>
           <div className="form-group">
-            <label>Due Date</label>
+            <label htmlFor="task-duedate">Due Date</label>
             <input
+              id="task-duedate"
               type="date"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
