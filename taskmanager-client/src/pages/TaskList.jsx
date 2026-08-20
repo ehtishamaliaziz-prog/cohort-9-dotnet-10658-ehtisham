@@ -50,7 +50,10 @@ function TaskList() {
     }
   }, [navigate, token]);
 
-  const handleDeleteTask = async (taskId) => {
+   const handleDeleteTask = async (taskId) => {
+    if (!window.confirm("Delete this task? This cannot be undone.")) {
+      return;
+    }
     setError("");
     try {
       await api.delete(`/tasks/${taskId}`, {
