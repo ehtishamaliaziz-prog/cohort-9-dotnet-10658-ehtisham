@@ -24,6 +24,11 @@ namespace TaskManager.Tests
         public async Task UpdateTask_ReassignsTask_WhenRequesterIsAdmin()
         {
             var context = GetInMemoryContext();
+
+            // The target user must exist for reassignment to succeed.
+            var targetUser = new User { Id = 2, Email = "target@example.com", FullName = "Target User", PasswordHash = "hash", Role = UserRole.User };
+            context.Users.Add(targetUser);
+
             var task = new TaskItem { Title = "Original task", UserId = 1 };
             context.Tasks.Add(task);
             await context.SaveChangesAsync();
