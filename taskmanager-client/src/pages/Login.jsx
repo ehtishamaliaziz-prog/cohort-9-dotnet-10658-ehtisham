@@ -19,7 +19,7 @@ function Login() {
         password: password,
       });
 
-      const { token, role, fullName } = response.data;
+      const { token, role, fullName } = response.data ?? {};
 
       if (!token) {
         setError("Login failed. Check your email and password.");

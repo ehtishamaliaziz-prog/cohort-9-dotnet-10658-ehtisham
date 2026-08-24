@@ -8,7 +8,7 @@ import TaskList from "./pages/TaskList";
 import TaskDetail from "./pages/TaskDetail";
 import NewTask from "./pages/NewTask";
 import Profile from "./pages/Profile";
-import ProtectedRoute from "./components/ProtectedRoute";
+import AuthenticatedLayout from "./components/AuthenticatedLayout";
 
 function App() {
   return (
@@ -17,54 +17,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tasks"
-            element={
-              <ProtectedRoute>
-                <TaskList />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tasks/new"
-            element={
-              <ProtectedRoute>
-                <NewTask />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tasks/edit/:id"
-            element={
-              <ProtectedRoute>
-                <NewTask />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/tasks/:id"
-            element={
-              <ProtectedRoute>
-                <TaskDetail />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
+          <Route element={<AuthenticatedLayout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/tasks" element={<TaskList />} />
+            <Route path="/tasks/new" element={<NewTask />} />
+            <Route path="/tasks/edit/:id" element={<NewTask />} />
+            <Route path="/tasks/:id" element={<TaskDetail />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -23,7 +23,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-       - name: Set up Node
+      - name: Set up Node
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '20'
@@ -59,7 +59,7 @@ jobs:
       - name: Build and analyze
         if: github.event_name == 'push'
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}-
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"ehtishamaliaziz-prog_cohort-9-dotnet-10658-ehtisham" /o:"ehtishamaliaziz-prog" /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
