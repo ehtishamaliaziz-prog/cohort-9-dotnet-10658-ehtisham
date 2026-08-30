@@ -25,7 +25,12 @@ namespace TaskManager.Api.Services
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };
 
-            var keyBytes = Encoding.UTF8.GetBytes(_config["Jwt:Key"]!);
+            var jwtKey = _config["Jwt:Key"];
+            if (string.IsNullOrWhiteSpace(jwtKey))
+            {
+                throw new InvalidOperationException("Jwt:Key is not configured. Set it via user-secrets or environment configuration.");
+            }
+            var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
             var key = new SymmetricSecurityKey(keyBytes);
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

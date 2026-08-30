@@ -41,7 +41,22 @@ namespace TaskManager.Api.Controllers
             };
 
             _context.Users.Add(user);
-            await _context.SaveChangesAsync();
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                var stillExists = await _context.Users.AnyAsync(u => u.Email == dto.Email);
+                if (stillExists)
+                {
+                    _logger.LogWarning("Concurrent registration attempt with existing email {Email}", dto.Email);
+                    return BadRequest("An account with this email already exists.");
+                }
+
+                throw;
+            }
 
             _logger.LogInformation("New user registered: {Email}", user.Email);
 
