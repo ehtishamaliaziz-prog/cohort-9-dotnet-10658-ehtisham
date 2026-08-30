@@ -1,0 +1,10 @@
+﻿bin/
+obj/
+*.user
+.vs/
+TaskManager.Api/Logs/
+taskmanager-client/node_modules/
+taskmanager-client/dist/
+taskmanager-client/.env
+*.dll
+*.pdb
