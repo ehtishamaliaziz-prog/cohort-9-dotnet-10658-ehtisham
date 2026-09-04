@@ -4001,11 +4001,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Tests\\TaskManager.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Tests\\TaskManager.Tests.csproj",
       "projectName": "TaskManager.Tests",
-      "projectPath": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Tests\\TaskManager.Tests.csproj",
+      "projectPath": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Tests\\TaskManager.Tests.csproj",
       "packagesPath": "C:\\Users\\Rizwa comuters\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Tests\\obj\\",
+      "outputPath": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rizwa comuters\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4021,8 +4021,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj": {
-              "projectPath": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj"
+            "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj": {
+              "projectPath": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj"
             }
           }
         }
@@ -4081,7 +4081,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.303/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

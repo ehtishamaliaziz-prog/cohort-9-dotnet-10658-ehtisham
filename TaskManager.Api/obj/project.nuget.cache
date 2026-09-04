@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ipF4Vww1A1c=",
+  "dgSpecHash": "7nVaWRoNcZo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj",
+  "projectFilePath": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rizwa comuters\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Rizwa comuters\\.nuget\\packages\\azure.identity\\1.17.1\\azure.identity.1.17.1.nupkg.sha512",

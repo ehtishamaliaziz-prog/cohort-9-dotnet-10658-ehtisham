@@ -4151,11 +4151,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj",
       "projectName": "TaskManager.Api",
-      "projectPath": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj",
+      "projectPath": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\TaskManager.Api.csproj",
       "packagesPath": "C:\\Users\\Rizwa comuters\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rizwa comuters\\Downloads\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\obj\\",
+      "outputPath": "C:\\Users\\Rizwa comuters\\Desktop\\cohort-9-dotnet-10658-ehtisham\\TaskManager.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rizwa comuters\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -4250,7 +4250,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.303/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

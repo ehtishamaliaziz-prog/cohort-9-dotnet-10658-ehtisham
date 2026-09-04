@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 function Profile() {
@@ -16,8 +16,7 @@ function Profile() {
   };
 
   if (!token) {
-    navigate("/");
-    return null;
+    return <Navigate to="/" replace />;
   }
 
   return (
