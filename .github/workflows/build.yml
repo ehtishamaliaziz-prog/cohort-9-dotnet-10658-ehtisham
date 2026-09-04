@@ -56,10 +56,12 @@ jobs:
         run: |
           New-Item -Path ${{ runner.temp }}\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path ${{ runner.temp }}\scanner
-      - name: Build and analyze
+           - name: Build and analyze
         if: github.event_name == 'push'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
         run: |
-        ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"ehtishamaliaziz-prog_cohort-9-dotnet-10658-ehtisham" /o:"ehtishamaliaziz-prog" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.sources="." /d:sonar.exclusions="**/bin/**,**/obj/**,**/node_modules/**"
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"ehtishamaliaziz-prog_cohort-9-dotnet-10658-ehtisham" /o:"ehtishamaliaziz-prog" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.sources="." /d:sonar.exclusions="**/bin/**,**/obj/**,**/node_modules/**"
+          dotnet build
+          ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
